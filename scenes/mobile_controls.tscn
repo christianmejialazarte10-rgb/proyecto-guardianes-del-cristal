@@ -1,0 +1,113 @@
+[gd_scene format=3 uid="uid://mwwkp47bx5jv"]
+
+[ext_resource type="Script" uid="uid://cyka5s68ld8ic" path="res://scripts/mobile_controls.gd" id="1_k8ypl"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_base"]
+content_margin_left = 0.0
+content_margin_top = 0.0
+content_margin_right = 0.0
+content_margin_bottom = 0.0
+bg_color = Color(1, 1, 1, 0.14)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(1, 1, 1, 0.45)
+corner_radius_top_left = 80
+corner_radius_top_right = 80
+corner_radius_bottom_right = 80
+corner_radius_bottom_left = 80
+anti_aliasing = true
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_knob"]
+content_margin_left = 0.0
+content_margin_top = 0.0
+content_margin_right = 0.0
+content_margin_bottom = 0.0
+bg_color = Color(0.95, 0.95, 0.95, 0.55)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(1, 1, 1, 0.8)
+corner_radius_top_left = 35
+corner_radius_top_right = 35
+corner_radius_bottom_right = 35
+corner_radius_bottom_left = 35
+anti_aliasing = true
+
+[sub_resource type="Gradient" id="Gradient_attack"]
+offsets = PackedFloat32Array(0, 0.72, 1)
+colors = PackedColorArray(0.85, 0.22, 0.22, 0.9, 0.85, 0.22, 0.22, 0.9, 0.85, 0.22, 0.22, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_attack"]
+gradient = SubResource("Gradient_attack")
+width = 118
+height = 118
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(0.5, 0.0)
+
+[sub_resource type="Gradient" id="Gradient_interact"]
+offsets = PackedFloat32Array(0, 0.72, 1)
+colors = PackedColorArray(0.25, 0.52, 0.95, 0.9, 0.25, 0.52, 0.95, 0.9, 0.25, 0.52, 0.95, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_interact"]
+gradient = SubResource("Gradient_interact")
+width = 118
+height = 118
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(0.5, 0.0)
+
+[node name="MobileControls" type="CanvasLayer" unique_id=142295059]
+script = ExtResource("1_k8ypl")
+
+[node name="Controls" type="Control" parent="." unique_id=706353636]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="JoystickBase" type="Panel" parent="Controls" unique_id=1273065507]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 40.0
+offset_top = -220.0
+offset_right = 200.0
+offset_bottom = -60.0
+grow_horizontal = 0
+grow_vertical = 0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_base")
+
+[node name="JoystickKnob" type="Panel" parent="Controls/JoystickBase" unique_id=799306664]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -35.0
+offset_top = -35.0
+offset_right = 35.0
+offset_bottom = 35.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_knob")
+
+[node name="AttackButton" type="TouchScreenButton" parent="Controls" unique_id=1383869961]
+position = Vector2(988, 484)
+texture_normal = SubResource("GradientTexture2D_attack")
+texture_pressed = SubResource("GradientTexture2D_attack")
+
+[node name="InteractButton" type="TouchScreenButton" parent="Controls" unique_id=896433475]
+position = Vector2(824, 484)
+texture_normal = SubResource("GradientTexture2D_interact")
+texture_pressed = SubResource("GradientTexture2D_interact")

@@ -1,0 +1,91 @@
+[gd_scene format=3 uid="uid://fx5xbqglbdjm"]
+
+[ext_resource type="Script" uid="uid://cjloubc5mxxfu" path="res://scripts/game_hud.gd" id="1_jna2d"]
+
+[node name="GameHUD" type="CanvasLayer" unique_id=565920768]
+script = ExtResource("1_jna2d")
+
+[node name="HUDContainer" type="Control" parent="." unique_id=1548223171]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="HeartsPanel" type="PanelContainer" parent="HUDContainer" unique_id=2140000200]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -172.0
+offset_top = 6.0
+offset_right = -6.0
+offset_bottom = 60.0
+
+[node name="HeartsContainer" type="HBoxContainer" parent="HUDContainer/HeartsPanel" unique_id=2140000201]
+layout_mode = 2
+theme_override_constants/separation = 4
+alignment = 1
+
+[node name="Heart1" type="TextureRect" parent="HUDContainer/HeartsPanel/HeartsContainer" unique_id=2140000202]
+custom_minimum_size = Vector2(28, 47)
+layout_mode = 2
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Heart2" type="TextureRect" parent="HUDContainer/HeartsPanel/HeartsContainer" unique_id=2140000203]
+custom_minimum_size = Vector2(28, 47)
+layout_mode = 2
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Heart3" type="TextureRect" parent="HUDContainer/HeartsPanel/HeartsContainer" unique_id=2140000204]
+custom_minimum_size = Vector2(28, 47)
+layout_mode = 2
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Heart4" type="TextureRect" parent="HUDContainer/HeartsPanel/HeartsContainer" unique_id=2140000205]
+custom_minimum_size = Vector2(28, 47)
+layout_mode = 2
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Heart5" type="TextureRect" parent="HUDContainer/HeartsPanel/HeartsContainer" unique_id=2140000206]
+custom_minimum_size = Vector2(28, 47)
+layout_mode = 2
+expand_mode = 1
+stretch_mode = 5
+
+[node name="CrystalsPanel" type="PanelContainer" parent="HUDContainer" unique_id=2141054094]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.036000002
+anchor_right = 0.036000002
+offset_left = -0.47200394
+offset_top = 1.0
+offset_right = 124.528
+offset_bottom = 54.0
+
+[node name="CrystalLabel" type="Label" parent="HUDContainer/CrystalsPanel" unique_id=633748987]
+layout_mode = 2
+text = "CRISTALES: 0/3"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="QuestPanel" type="PanelContainer" parent="HUDContainer" unique_id=487448332]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.22200002
+anchor_right = 0.22200002
+offset_left = 0.25598145
+offset_right = 638.256
+offset_bottom = 60.0
+
+[node name="QuestLabel" type="Label" parent="HUDContainer/QuestPanel" unique_id=1368643307]
+layout_mode = 2
+text = "Mision: Hablar con Han Solo"
+horizontal_alignment = 1
+vertical_alignment = 1
